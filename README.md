@@ -1,26 +1,26 @@
 # Amptune
 
-Библиотека для обработки сейсмических данных с возможностью амплификации и выравнивания амплитуд в заданных окнах.
+Library for seismic data processing with amplitude amplification and alignment capabilities in specified windows.
 
-## Функционал
+## Features
 
-### Основные возможности
+### Main Capabilities
 
-- **Масштабирование амплитуд** (`scale`) - увеличение или уменьшение амплитуд в заданном окне
-- **Выравнивание амплитуд** (`align`) - приведение амплитуд в окне к уровню окружающих данных
-- **Плавные переходы** - создание градиентных масок для избежания резких скачков амплитуд
+- **Amplitude scaling** (`scale`) - increase or decrease amplitudes in a specified window
+- **Amplitude alignment** (`align`) - adjust amplitudes in the window to match surrounding data levels
+- **Smooth transitions** - create gradient masks to avoid sharp amplitude jumps
 
-### Режимы переходов
+### Transition Modes
 
-- `outside` - плавный переход от границ окна наружу
-- `inside` - плавный переход от границ окна внутрь
+- `outside` - smooth transition from window boundaries outward
+- `inside` - smooth transition from window boundaries inward
 
-## Использование
+## Usage
 
 ```python
 from amplify import amplify_seismic_window
 
-# Масштабирование
+# Scaling
 amplified_data, mask, window = amplify_seismic_window(
     seismic_data=data,
     dt_ms=4.0,
@@ -31,7 +31,7 @@ amplified_data, mask, window = amplify_seismic_window(
     transition_width_time_ms=40.0
 )
 
-# Выравнивание
+# Alignment
 aligned_data, mask, window = amplify_seismic_window(
     seismic_data=data,
     dt_ms=4.0,
@@ -42,12 +42,12 @@ aligned_data, mask, window = amplify_seismic_window(
 )
 ```
 
-## Файлы
+## Files
 
-- `amplify.py` - основная библиотека с функциями обработки
-- `viz_test.py` - тестовый скрипт с визуализацией результатов
+- `amplify.py` - main library with processing functions
+- `viz_test.py` - test script with result visualization
 
-## Требования
+## Requirements
 
 - numpy
-- matplotlib (для визуализации)
+- matplotlib (for visualization)
